@@ -412,6 +412,7 @@ Then the `observe` property should be configured as follows:
       // Choose rendering path: full vs. incremental using splices
       if (this._needFullRefresh) {
         // Full refresh when items, sort, or filter change, or when render() called
+        this._initializeChunking();
         this._applyFullRefresh();
         this._needFullRefresh = false;
       } else if (this._keySplices.length) {
